@@ -213,7 +213,7 @@ void rrt()
           img.at<Vec3b>(i, j)[2] = 0;
         }
       }
-      if((check_validity_1(stepnode->position, end_node.position)) && (check_validity_2(stepnode->position, end_node.position)) && (node_dist(stepnode->position,end_node.position) < 8.0))
+      if((check_validity_1(stepnode->position, end_node.position)) && (check_validity_2(stepnode->position, end_node.position)) && (node_dist(stepnode->position,end_node.position) < step_size))
       {
         reached = 1;
         nodes[totnodes++] = &end_node;
@@ -234,7 +234,7 @@ int main()
 
   namedWindow( "window", WINDOW_AUTOSIZE );
   imshow("window", img);
-
+  imwrite("output.png", img);
   waitKey();
   return 0;
 }
