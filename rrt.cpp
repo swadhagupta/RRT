@@ -38,7 +38,7 @@ Mat img;
 Node* nodes[5000];
 int totnodes = 0;
 int reached = 0;
-int step_size = 20;
+int step_size = 10;
 int iter = 0;
 
 void init()
